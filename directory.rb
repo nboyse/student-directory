@@ -1,3 +1,5 @@
+# Methods/Variables
+
 def input_students
   puts "Please enter the name of the students"
   puts "To finish, just put return twice"
@@ -27,10 +29,11 @@ def print_footer(students)
 end
 
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-  end
+  students.each_with_index{|student, i|
+    puts "#{i+1} : #{student[:name]} (#{student[:cohort]} cohort)"}
 end
+
+# Output
 
 students = input_students
 print_header
